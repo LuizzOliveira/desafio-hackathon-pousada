@@ -8,7 +8,7 @@
 define('ROOT_PATH', dirname(__DIR__));
 define('APP_PATH', ROOT_PATH . '/app');
 define('VIEWS_PATH', APP_PATH . '/views');
-define('BASE_URL', 'http://localhost/panturismo');
+define('BASE_URL', 'http://localhost/panturismo/src');
 define('ASSETS_PATH', BASE_URL . '/assets');
 
 

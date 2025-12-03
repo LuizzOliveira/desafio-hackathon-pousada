@@ -75,6 +75,7 @@ a:hover {
 
 /* Container */
 .container {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
@@ -1085,12 +1086,31 @@ tbody tr:last-child td {
 
 /* Botão */
 .theme-toggle {
-    background: none;
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+    color: #ffb900;
     border: none;
     cursor: pointer;
-    font-size: 20px;
-    color: #ec921a;
+    font-size: 24px;
 }
+#theme-icon {
+    position: absolute;
+    color: #303031; /* cor que você usou na lua */
+}
+
+.dark #theme-icon {
+    color: #ffb900; /* se quiser outra cor no dark mode */
+}
+
+.theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.dark .theme-toggle {
+    color: #fff;
+}
+
 
 /* Tema escuro */
 .dark {

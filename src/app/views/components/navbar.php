@@ -33,12 +33,14 @@
             <span></span>
         </button>
 
+        <!-- Botão de alternância de tema -->
         <button id="theme-toggle" class="theme-toggle">
-            <i class="fa-solid fa-moon"></i>
+            <i id="theme-icon" class="fa-solid fa-moon"></i>
         </button>
 
+
     </div>
-    
+
     <div class="search-container">
         <div id="search-results" class="search-results" aria-live="polite"></div>
     </div>
