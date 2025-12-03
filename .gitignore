@@ -1,0 +1,30 @@
+# Ignorar arquivos de configuração sensíveis
+/app/config.local.php
+
+# Ignorar logs
+/logs/*.log
+/tmp/
+
+# Ignorar arquivos de cache e sessão
+/cache/
+/sessions/
+
+# Ignorar arquivos de banco de dados SQLite (se usado)
+*.sqlite
+*.sqlite3
+
+# Ignorar arquivos de upload
+/public/uploads/
+
+# Ignorar arquivos de IDEs e editores
+.idea/
+.vscode/
+*.swp
+*~
+
+# Ignorar arquivos de dependências (se usar Composer no futuro)
+/vendor/
+
+# Ignorar arquivos de sistema operacional
+.DS_Store
+Thumbs.db
