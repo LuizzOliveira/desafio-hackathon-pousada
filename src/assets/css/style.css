@@ -1136,11 +1136,13 @@ tbody tr:last-child td {
     background-color: white;
 }
 
-.dark h2,
-a.tab-link {
+.dark h2{
     color: white;
 }
 
+.dark .tab-link {
+    color: rgb(250, 248, 248);
+}
 .dark td {
     color: black;
 }
