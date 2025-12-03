@@ -6,7 +6,7 @@
 // Informações do Site
 define('SITE_NAME', 'Panturismo');
 define('SITE_DESCRIPTION', 'Pacotes de turismo com tudo que há de melhor no Pantanal');
-define('SITE_URL', 'http://localhost/panturismo/public');
+define('SITE_URL', 'http://localhost/panturismo/src/public');
 
 // Configurações de Banco de Dados (para uso futuro)
 define('DB_HOST', 'localhost');

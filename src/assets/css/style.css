@@ -1201,6 +1201,13 @@ a.tab-link {
     animation: highlight 2s ease-in-out;
 }
 
+.search-btn{
+    background-color: inherit;
+    padding: 0px;
+    font-size: 18px;
+    border: none;
+}
+
 @keyframes highlight {
     0% {
         box-shadow: 0 0 0 4px rgba(255, 235, 59, 0.9);
