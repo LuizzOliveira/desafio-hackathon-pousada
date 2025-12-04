@@ -19,41 +19,31 @@ class PacotesController extends BaseController {
     
     public function prontos() {
         $this->setData('page_title', 'Pacotes Prontos - Panturismo');
-        $this->setData('packages', [
-            [
-                'id' => 1,
-                'name' => 'Aventura Completa',
-                'duration' => '5 dias',
-                'price' => 'R$ 1.500',
-                'description' => 'Passeios de barco, trilhas e observação de fauna',
-                'includes' => ['Hospedagem', 'Refeições', 'Guia especializado', 'Transporte']
-            ],
-            [
-                'id' => 2,
-                'name' => 'Safari Fotográfico Premium',
-                'duration' => '7 dias',
-                'price' => 'R$ 3.500',
-                'description' => 'Experiência premium com fotógrafos profissionais',
-                'includes' => ['Hospedagem 5 estrelas', 'Refeições gourmet', 'Guia fotógrafo', 'Equipamento']
-            ],
-            [
-                'id' => 3,
-                'name' => 'Pesca Esportiva',
-                'duration' => '4 dias',
-                'price' => 'R$ 2.200',
-                'description' => 'Pesca em locais privilegiados do Pantanal',
-                'includes' => ['Hospedagem', 'Refeições', 'Barco e equipamento', 'Guia especializado']
-            ],
-            [
-                'id' => 4,
-                'name' => 'Ecoturismo Familiar',
-                'duration' => '3 dias',
-                'price' => 'R$ 900',
-                'description' => 'Atividades para toda a família em contato com a natureza',
-                'includes' => ['Hospedagem', 'Refeições', 'Atividades variadas', 'Seguro']
-            ]
-        ]);
         
+        // Conectar ao banco
+        $pdo = Database::getConnection();
+        
+        // Buscar pacotes ativos
+        // Traduzimos as colunas (nome -> name) para a View entender
+        $sql = "SELECT 
+                    id, 
+                    nome as name, 
+                    CONCAT(duracao, ' dias') as duration, 
+                    CONCAT('R$ ', REPLACE(FORMAT(preco, 2), '.', ',')) as price, 
+                    descricao as description,
+                    imagem as image
+                FROM pacotes 
+                WHERE ativo = 1";
+                
+        $stmt = $pdo->query($sql);
+        $pacotes = $stmt->fetchAll();
+
+        // Adicionar itens inclusos (simulado, pois não criamos tabela para isso)
+        foreach ($pacotes as &$pacote) {
+            $pacote['includes'] = ['Hospedagem', 'Refeições', 'Guia', 'Transporte'];
+        }
+        
+        $this->setData('packages', $pacotes);
         $this->render('pacotes-prontos', $this->data);
     }
     

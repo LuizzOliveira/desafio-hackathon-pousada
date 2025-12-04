@@ -8,15 +8,19 @@
 define('ROOT_PATH', dirname(__DIR__));
 define('APP_PATH',  ROOT_PATH . '/app');
 define('VIEWS_PATH', APP_PATH . '/views');
-define('BASE_URL', 'http://localhost/panturismo/src');
-define('ASSETS_PATH', BASE_URL . '/assets');
 
+// --- ATENÇÃO: Verifique se este caminho está correto para o seu XAMPP ---
+define('BASE_URL', 'http://localhost/desafio-hackathon-pousada/src'); 
+define('ASSETS_PATH', BASE_URL . '/assets');
 
 // Iniciar sessão
 session_start();
 
 // Incluir configurações
 require_once APP_PATH . '/config.php';
+
+// === LINHA NOVA ADICIONADA AQUI ===
+require_once APP_PATH . '/Database.php';
 
 // Incluir classes do MVC
 require_once APP_PATH . '/controllers/HomeController.php';

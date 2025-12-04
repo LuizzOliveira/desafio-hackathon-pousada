@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /panturismo/public/
+    RewriteBase /desafio-hackathon-pousada/src/public/
     
     # Redirecionar requisições para index.php
     RewriteCond %{REQUEST_FILENAME} !-f
